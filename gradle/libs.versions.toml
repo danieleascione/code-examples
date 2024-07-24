@@ -1,0 +1,17 @@
+
+[versions]
+kotlin = "2.0.0"
+kotest = "5.9.1"
+testcontainers = "1.2.0"
+awsSdk = "2.26.23"
+
+[libraries]
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlin" }
+kotest-runner = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
+kotest-assertions = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
+testcontainers = { module = "org.testcontainers:testcontainers", version.ref = "testcontainers" }
+testcontainers-junit = { module = "org.testcontainers:junit-jupiter", version.ref = "testcontainers" }
+aws-sdk-sqs = { module = "software.amazon.awssdk:sqs", version.ref = "awsSdk" }
+
+[plugins]
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
