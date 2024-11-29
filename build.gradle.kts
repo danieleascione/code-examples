@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "2.0.0"
+    kotlin("plugin.power-assert") version "2.0.0"
 }
 
 group = "org.example"
@@ -12,10 +13,9 @@ repositories {
 dependencies {
     implementation(libs.aws.sdk.sqs)
 
-    testImplementation(libs.kotest.runner)
-    testImplementation(libs.kotest.assertions)
-
+    testImplementation(kotlin("test"))
     testImplementation(libs.testcontainers)
+    testImplementation(libs.testcontainers.localstack)
     testImplementation(libs.testcontainers.junit)
 }
 
@@ -24,4 +24,9 @@ tasks.test {
 }
 kotlin {
     jvmToolchain(21)
+}
+
+powerAssert {
+    functions = listOf("kotlin.assert", "kotlin.test.assertTrue", "kotlin.test.assertEquals", "kotlin.test.assertNull")
+    includedSourceSets = listOf("commonMain", "jvmMain", "jsMain", "nativeMain")
 }

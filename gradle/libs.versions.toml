@@ -2,7 +2,7 @@
 [versions]
 kotlin = "2.0.0"
 kotest = "5.9.1"
-testcontainers = "1.2.0"
+testcontainers = "1.18.0"
 awsSdk = "2.26.23"
 
 [libraries]
@@ -11,6 +11,7 @@ kotest-runner = { module = "io.kotest:kotest-runner-junit5", version.ref = "kote
 kotest-assertions = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
 testcontainers = { module = "org.testcontainers:testcontainers", version.ref = "testcontainers" }
 testcontainers-junit = { module = "org.testcontainers:junit-jupiter", version.ref = "testcontainers" }
+testcontainers-localstack = { module = "org.testcontainers:localstack", version.ref = "testcontainers" }
 aws-sdk-sqs = { module = "software.amazon.awssdk:sqs", version.ref = "awsSdk" }
 
 [plugins]
