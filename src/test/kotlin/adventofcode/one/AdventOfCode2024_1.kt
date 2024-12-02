@@ -1,4 +1,4 @@
-package advent_code.one
+package adventofcode.one
 
 import java.io.InputStream
 import kotlin.math.abs
@@ -6,8 +6,8 @@ import kotlin.test.Test
 
 private const val DELIMITER = "   "
 
+@Suppress("ktlint:standard:class-naming")
 class AdventOfCode2024_1 {
-
     @Test
     fun `real input`() {
         val input: Input = readFile("adventOfCode2024/one.txt").toInput()
@@ -22,7 +22,6 @@ class AdventOfCode2024_1 {
     @Test
     fun `should work 2`() {
         val dist = distanceBetween(intArrayOf(5, 10), intArrayOf(1, 20))
-        println(dist)
         assert(dist == 14)
     }
 
@@ -45,30 +44,31 @@ class AdventOfCode2024_1 {
 
     fun readFile(filename: String): InputStream = javaClass.getClassLoader().getResourceAsStream(filename)!!
 
-    private fun InputStream.toInput(): Input =
-        readArrays(bufferedReader().readLines().map { asInput(it) })
+    private fun InputStream.toInput(): Input = readArrays(bufferedReader().readLines().map { asInput(it) })
 
-    private fun asInput(string: String) : Input {
-       return string.split(DELIMITER).let { Input(intArrayOf(it[0].toInt()), intArrayOf(it[1].toInt())) }
-    }
+    private fun asInput(string: String): Input = string.split(DELIMITER).let { Input(intArrayOf(it[0].toInt()), intArrayOf(it[1].toInt())) }
 
-    private fun readArrays(input: List<Input>): Input =
-        input.fold(Input(intArrayOf(), intArrayOf())) { a: Input, b: Input -> a + b}
+    private fun readArrays(input: List<Input>): Input = input.fold(Input(intArrayOf(), intArrayOf())) { a: Input, b: Input -> a + b }
 
-    data class Input(val array1: IntArray, val array2: IntArray) {
-
-        fun add(one: Int, two: Int): Input {
-            return Input(array1.plus(one), array2.plus(two))
-        }
+    data class Input(
+        val array1: IntArray,
+        val array2: IntArray,
+    ) {
+        fun add(
+            one: Int,
+            two: Int,
+        ): Input = Input(array1.plus(one), array2.plus(two))
 
         operator fun plus(other: Input) = Input(other.array1.plus(array1), other.array2.plus(array2))
 
         fun distance(): Int = distanceBetween(array1, array2)
     }
-
 }
 
-fun distanceBetween(array1: IntArray, array2: IntArray) : Int {
+fun distanceBetween(
+    array1: IntArray,
+    array2: IntArray,
+): Int {
     require(array2.size == array1.size)
 
     array1.sort()
