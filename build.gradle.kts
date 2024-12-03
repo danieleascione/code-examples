@@ -25,17 +25,4 @@ tasks.test {
 }
 kotlin {
     jvmToolchain(21)
-
-    // Enable preview features
-    compilerOptions {
-        freeCompilerArgs.addAll(
-            "-Xenable-power-assert", // Enables Power Assert
-            "-opt-in=kotlin.ExperimentalStdlibApi", // Opt-in for experimental features, if needed
-        )
-    }
-}
-
-powerAssert {
-    functions = listOf("kotlin.assert", "kotlin.test.assertTrue", "kotlin.test.assertEquals", "kotlin.test.assertNull")
-    includedSourceSets = listOf("test")
 }
