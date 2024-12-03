@@ -1,4 +1,4 @@
-package adventofcode.one
+package adventofcode2024.one
 
 import java.io.InputStream
 import kotlin.math.abs

@@ -1,6 +1,6 @@
-package adventofcode.two
+package adventofcode2024.two
 
-import adventofcode.readFileAsList
+import adventofcode2024.readFileAsList
 import org.junit.jupiter.api.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue

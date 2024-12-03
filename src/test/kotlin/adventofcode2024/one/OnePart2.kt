@@ -1,6 +1,6 @@
-package adventofcode.one
+package adventofcode2024.one
 
-import adventofcode.readFile
+import adventofcode2024.readFile
 import org.junit.jupiter.api.Test
 
 class OnePart2 {

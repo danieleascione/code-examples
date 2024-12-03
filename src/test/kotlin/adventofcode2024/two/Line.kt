@@ -1,4 +1,4 @@
-package adventofcode.two
+package adventofcode2024.two
 
 import kotlin.math.abs
 
